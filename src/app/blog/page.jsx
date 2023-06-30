@@ -14,21 +14,9 @@ async function getData() {
 
 const Blog = async () => {
   const data = await getData();
-  // useEffect(() => {
-  //   const fetchAllPosts = async () => {
-  //     try {
-  //       const res = await fetch(
-  //         `${process.env.NEXTAUTH_URL}/api/posts`
-  //       );
-  //       setData(res);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   fetchAllPosts();
-  // }, []);
+
   return (
-    <div className='container'>
+    <div className='m-4'>
       <h1 className='text-center p-2 text-5xl text-transparent bg-clip-text bg-gradient-to-b from-blue to-white'>
         My Blog
       </h1>
@@ -41,7 +29,8 @@ const Blog = async () => {
         priority={true}
         quality={100}
       />
-      {data?.map((post) => (
+      <h2 className='text-center text-pink'>Coming soon...</h2>
+      {/* {data?.map((post) => (
         <div
           key={post._id}
           className='grid lg:grid-cols-2 sm:pb-10 gap-4 my-5'
@@ -72,7 +61,7 @@ const Blog = async () => {
             </div>
           </div>
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };
