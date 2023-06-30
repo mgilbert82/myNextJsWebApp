@@ -43,9 +43,9 @@ const ContactForm = () => {
   };
 
   return (
-    <div className='w-2/4 mx-auto'>
+    <>
       <form
-        className='grid grid-rows mx-auto'
+        className='grid lg:grid-rows gap-2 text-center w-3/4 mx-auto mb-10'
         onSubmit={handleSubmit(onSubmitHandler)}
       >
         {isSended && (
@@ -54,7 +54,7 @@ const ContactForm = () => {
             répondrons rapidement !
           </p>
         )}
-        <div className='grid grid-cols-2 gap-2'>
+        <div className='grid lg:grid-cols-2 gap-2'>
           <input
             type='text'
             id='name'
@@ -116,7 +116,7 @@ const ContactForm = () => {
           </button>
         )}
       </form>
-    </div>
+    </>
   );
 };
 
