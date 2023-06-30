@@ -6,7 +6,7 @@ import blog from '../../../public/assets/images/website/blog.png';
 import Button from '@/components/Button/Button';
 
 async function getData() {
-  const res = await fetch(`${process.env.SITE_URL}/api/posts`);
+  const res = await fetch(`${process.env.NEXTAUTH_URL}/api/posts`);
 
   if (res.ok) {
     return res.json();

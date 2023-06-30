@@ -4,9 +4,12 @@ import { notFound } from 'next/navigation';
 import Button from '@/components/Button/Button';
 
 async function getwork(id) {
-  const res = await fetch(`${process.env.SITE_URL}/api/works/${id}`, {
-    store: 'no-store',
-  });
+  const res = await fetch(
+    `${process.env.NEXTAUTH_URL}/api/works/${id}`,
+    {
+      store: 'no-store',
+    }
+  );
 
   if (!res.ok) {
     return notFound();
