@@ -1,6 +1,5 @@
 'use client';
 import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 import blog from '../../../public/assets/images/website/blog.png';
 import Button from '@/components/Button/Button';
@@ -12,8 +11,22 @@ async function getData() {
     return res.json();
   }
 }
+
 const Blog = async () => {
   const data = await getData();
+  // useEffect(() => {
+  //   const fetchAllPosts = async () => {
+  //     try {
+  //       const res = await fetch(
+  //         `${process.env.NEXTAUTH_URL}/api/posts`
+  //       );
+  //       setData(res);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   fetchAllPosts();
+  // }, []);
   return (
     <div className='container'>
       <h1 className='text-center p-2 text-5xl text-transparent bg-clip-text bg-gradient-to-b from-blue to-white'>
