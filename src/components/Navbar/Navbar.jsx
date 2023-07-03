@@ -13,22 +13,17 @@ import {
 
 const links = [
   {
-    id: 1,
-    title: 'Home',
-    url: '/',
-  },
-  {
-    id: 2,
+    id: 0,
     title: 'Work',
     url: '/work',
   },
   {
-    id: 3,
+    id: 1,
     title: 'Blog',
     url: '/blog',
   },
   {
-    id: 4,
+    id: 2,
     title: 'Contact',
     url: '/contact',
   },
