@@ -44,77 +44,76 @@ const ContactForm = () => {
 
   return (
     <>
-      <form
-        className='grid lg:grid-rows gap-2 text-center w-3/4 mx-auto mb-10'
-        onSubmit={handleSubmit(onSubmitHandler)}
-      >
-        {isSended && (
-          <p>
-            Votre message a bien été envoyé avec succès nous vous
-            répondrons rapidement !
-          </p>
-        )}
-        <div className='grid lg:grid-cols-2 gap-2'>
-          <input
-            type='text'
-            id='name'
-            {...register('name', { required: true })}
-            placeholder='votre prénom'
-            className='bg-blue p-2 text-white rounded mb-2 placeholder:text-white'
-          />
+      <form onSubmit={handleSubmit(onSubmitHandler)}>
+        <div className='grid lg:grid-rows gap-2 text-center w-3/4 mx-auto mb-10'>
+          {isSended && (
+            <p>
+              Votre message a bien été envoyé avec succès nous vous
+              répondrons rapidement !
+            </p>
+          )}
+          <div className='grid lg:grid-cols-2 gap-2'>
+            <input
+              type='text'
+              id='name'
+              {...register('name', { required: true })}
+              placeholder='votre prénom'
+              className='bg-blue p-2 text-white rounded mb-2 placeholder:text-white'
+            />
 
+            <input
+              type='text'
+              id='surname'
+              {...register('surname', { required: true })}
+              placeholder='votre nom'
+              className='bg-blue p-2 text-white rounded mb-2 placeholder:text-white'
+            />
+          </div>
+          {errors.name && (
+            <small className='m-2 text-yellow'>
+              Vous avez oublié de saisir votre prénom
+            </small>
+          )}
+          {errors.surname && (
+            <small className='m-2 text-yellow'>
+              Vous avez oublié de saisir votre nom
+            </small>
+          )}
           <input
-            type='text'
-            id='surname'
-            {...register('surname', { required: true })}
-            placeholder='votre nom'
+            type='email'
+            id='email'
+            {...register('email', { required: true })}
+            placeholder='votre adresse email'
             className='bg-blue p-2 text-white rounded mb-2 placeholder:text-white'
           />
-        </div>
-        {errors.name && (
-          <small className='m-2 text-yellow'>
-            Vous avez oublié de saisir votre prénom
-          </small>
-        )}
-        {errors.surname && (
-          <small className='m-2 text-yellow'>
-            Vous avez oublié de saisir votre nom
-          </small>
-        )}
-        <input
-          type='email'
-          id='email'
-          {...register('email', { required: true })}
-          placeholder='votre adresse email'
-          className='bg-blue p-2 text-white rounded mb-2 placeholder:text-white'
-        />
-        {errors.email && (
-          <small className='m-2 text-yellow'>
-            Vous avez oublié de saisir votre email
-          </small>
-        )}
-        <textarea
-          id='content'
-          {...register('content', { required: true })}
-          cols='30'
-          rows='8'
-          className='bg-blue p-2 text-white rounded mb-4 placeholder:text-white'
-          placeholder='Bonjour ...
+          {errors.email && (
+            <small className='m-2 text-yellow'>
+              Vous avez oublié de saisir votre email
+            </small>
+          )}
+          <textarea
+            id='content'
+            {...register('content', { required: true })}
+            cols='30'
+            rows='8'
+            className='bg-blue p-2 text-white rounded mb-4 placeholder:text-white'
+            placeholder='Bonjour ...
             '
-        />
-        {errors.content && (
-          <small className='m-2 text-yellow'>
-            Vous avez oublié de saisir votre message
-          </small>
-        )}
-        {!isLoading && (
-          <button
-            className='p-2 mx-auto rounded-xl text-white bg-yellow'
-            type='submit'
-          >
-            Envoyer
-          </button>
-        )}
+          />
+          {errors.content && (
+            <small className='m-2 text-yellow'>
+              Vous avez oublié de saisir votre message
+            </small>
+          )}
+          {!isLoading && (
+            <button
+              className=' w-full mx-auto rounded-md text-white bg-yellow'
+              type='submit'
+            >
+              Envoyer
+            </button>
+          )}
+        </div>
       </form>
     </>
   );

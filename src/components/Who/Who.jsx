@@ -5,7 +5,7 @@ import Button from '../Button/Button';
 
 const Who = () => {
   return (
-    <div className='bg-gradient-to-t from-pink lg:h-full snap-start p-10'>
+    <div className='bg-gradient-to-t from-pink lg:h-full p-10'>
       <h1 className='text-center text-5xl text-transparent bg-clip-text bg-gradient-to-b from-blue to-white'>
         Who am i ?
       </h1>
@@ -56,12 +56,8 @@ const Who = () => {
             <li> - Creative illustrations</li>
             <li>...</li>
           </ul>
-          <div className='w-1/2 mx-auto'>
-            <Button
-              url={'/contact'}
-              text={'Contact me'}
-              className='text-center'
-            />
+          <div className='text-center'>
+            <Button url={'/contact'} text={'Contact me'} />
           </div>
         </div>
       </div>
