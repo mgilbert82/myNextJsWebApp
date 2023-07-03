@@ -29,11 +29,18 @@ export default function RootLayout({ children }) {
       <body className={hubbali.className}>
         <ThemeProvider>
           <AuthProvider>
-            <Navbar />
-            <div className='h-screen overflow-y-auto'>{children}</div>
-            <Footer />
+            <header>
+              <Navbar />
+            </header>
+            <div className='lg:h-screen lg:overflow-y-auto'>
+              {children}
+            </div>
+            <footer>
+              <Footer />
+            </footer>
           </AuthProvider>
         </ThemeProvider>
+        {/* <Script src={script} /> */}
       </body>
     </html>
   );

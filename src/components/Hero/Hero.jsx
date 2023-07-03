@@ -5,7 +5,7 @@ import heroimg from '../../../public/assets/images/website/hero.png';
 
 export default function Hero() {
   return (
-    <div className='lg:h-full snap-center mx-auto lg:w-3/4 p-4 text-center'>
+    <div className='lg:h-full snap-center mx-auto lg:w-3/4 mt-10 text-center'>
       <div className='grid md:grid-cols-2 gap-4'>
         <div className='m-2 mt-10'>
           <h1 className='p-2 text-5xl text-transparent bg-clip-text bg-gradient-to-b from-blue to-white'>

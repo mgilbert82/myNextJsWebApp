@@ -5,15 +5,15 @@ import Button from '../Button/Button';
 
 const Who = () => {
   return (
-    <div className='bg-gradient-to-t from-pink lg:h-full p-10'>
+    <div className='bg-gradient-to-t from-pink p-10 lg:h-full snap-center mx-auto text-center'>
       <h1 className='text-center text-5xl text-transparent bg-clip-text bg-gradient-to-b from-blue to-white'>
         Who am i ?
       </h1>
       <div className='grid lg:grid-cols-3 gap-4'>
         {/* Illustration */}
-        <div className='m-2 w-3/4 mx-auto'>
+        <div className='m-2 mx-auto'>
           <Image
-            className='object-cover w-3/4'
+            className='object-cover lg:w-3/4'
             src={about}
             // src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
             alt='AboutMe'

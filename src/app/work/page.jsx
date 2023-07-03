@@ -16,7 +16,7 @@ const Work = () => {
   );
 
   return (
-    <div className='container'>
+    <div className='lg:h-full snap-center mx-auto mt-10 text-center'>
       <Image
         className='h-60 w-full object-cover mx-auto pb-10'
         // src="https://images.unsplash.com/photo-1623116135497-a90bdc0ddca9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
@@ -30,7 +30,7 @@ const Work = () => {
         ? 'Loading...'
         : data?.map((work) => (
             <Link href={`/work/${work._id}`} key={work._id}>
-              <div className='grid md:grid-cols-2 mb-4 mt-10 m-2 gap-2'>
+              <div className='grid md:grid-cols-2 mb-4 mt-10 m-6 gap-2'>
                 <div className='m-2'>
                   <h3 className='text-blue text-2xl text-left'>
                     {work.title}

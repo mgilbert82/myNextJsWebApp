@@ -44,8 +44,11 @@ const ContactForm = () => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmitHandler)}>
-        <div className='grid lg:grid-rows gap-2 text-center w-3/4 mx-auto mb-10'>
+      <form
+        onSubmit={handleSubmit(onSubmitHandler)}
+        className='lg:w-2/4 text-center lg:mx-auto'
+      >
+        <div className='grid lg:grid-rows mb-10'>
           {isSended && (
             <p>
               Votre message a bien été envoyé avec succès nous vous
@@ -107,7 +110,7 @@ const ContactForm = () => {
           )}
           {!isLoading && (
             <button
-              className=' w-full mx-auto rounded-md text-white bg-yellow'
+              className='w-full h-10 mx-auto rounded-md text-white bg-yellow'
               type='submit'
             >
               Envoyer
