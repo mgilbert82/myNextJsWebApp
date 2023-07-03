@@ -33,15 +33,17 @@ const Blogwork = async ({ params }) => {
 
   return (
     <div className='container'>
-      <h2 className='text-yellow my-10'>{work.category}</h2>
       <div className='grid lg:grid-cols-2 gap-4 mt-10'>
         <div className='text-left'>
           <h3 className='text-blue text-2xl uppercase'>
             {work.title}
           </h3>
           <hr className='text-pink mb-4 w-20 text-center' />
-          <h4 className='text-2xl'>{work.subtitle}</h4>
+          <h4 className='m-2'>{work.subtitle}</h4>
           <hr className='text-pink mt-4 mb-4 w-20 text-center' />
+          <p className='text-yellow my-2 mx-auto text-lg'>
+            {work.category}
+          </p>
         </div>
         <Image
           className=' w-full object-cover'
@@ -60,12 +62,12 @@ const Blogwork = async ({ params }) => {
             <Button url={work.link} text={'Link to webapp'} />
           </div>
         </div>
-        <div className='w-full mx-auto'>
+        <div className='w-1/2 mx-auto'>
           <h3 className='mb-4 text-center'>Tags</h3>
-          <div className='grid grid-cols-2'>
+          <div className='flex flex-col gap-2'>
             {tags.map((tag, id) => (
               <div
-                className='text-white rounded-2xl m-2 p-2 text-center bg-blue'
+                className='text-white rounded-xl text-center bg-blue'
                 key={id}
               >
                 {tag}

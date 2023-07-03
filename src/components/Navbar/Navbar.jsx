@@ -38,21 +38,17 @@ const Navbar = () => {
 
   return (
     <Popover className='mx-auto flex items-center mt-8 lg:px-6 py-2 h-10 rounded w-3/4 lg:border-2 lg:border-pink static'>
-      {/* Logo */}
-      <Link href='/' className='flex' aria-label='Homepage'>
-        <Image
-          src={logoTest}
-          alt=''
-          className='hidden md:w-7 md:inline md:mr-2'
-        />
-        <span className='md:text-5XL' aria-hidden='true'>
-          <strong className='text-pink'>T</strong>reblig
-        </span>
-      </Link>
-
       {/* Pages Link */}
       <div className='grow'>
-        <div className='md:flex items-center justify-center md:gap-2'>
+        {/* Logo */}
+        <Link href='/' className='flex' aria-label='Homepage'>
+          <Image
+            src={logoTest}
+            alt=''
+            className='w-7 md:inline mr-2'
+          />
+        </Link>
+        <div className='hidden md:flex items-center justify-center md:gap-2'>
           {links.map((link) => (
             <Link
               key={link.id}
