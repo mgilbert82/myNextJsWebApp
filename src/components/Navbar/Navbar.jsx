@@ -14,16 +14,21 @@ import {
 const links = [
   {
     id: 0,
+    title: 'Home',
+    url: '/',
+  },
+  {
+    id: 1,
     title: 'Work',
     url: '/work',
   },
   {
-    id: 1,
+    id: 2,
     title: 'Blog',
     url: '/blog',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Contact',
     url: '/contact',
   },
@@ -37,29 +42,25 @@ const Navbar = () => {
   const session = useSession();
 
   return (
-    <Popover className='mx-auto flex items-center mt-8 lg:px-6 py-2 h-10 rounded w-3/4 lg:border-2 lg:border-pink static'>
+    <Popover className='mt-5 mx-auto flex items-center sm:border-2 border-pink px-6 py-2 h-10 w-3/4 sm:rounded-md'>
+      {/* Logo */}
+      <Link href='/' className='flex' aria-label='Homepage'>
+        <Image src={logoTest} alt='' className='w-7' />
+      </Link>
       {/* Pages Link */}
       <div className='grow'>
-        {/* Logo */}
-        <Link href='/' className='flex' aria-label='Homepage'>
-          <Image
-            src={logoTest}
-            alt=''
-            className='w-7 md:inline mr-2'
-          />
-        </Link>
-        <div className='hidden md:flex items-center justify-center md:gap-2'>
+        <div className='hidden sm:flex items-center justify-center gap-2'>
           {links.map((link) => (
             <Link
               key={link.id}
               href={link.url}
-              className='uppercase font-semibold hover:text-yellow me-2 cursor-pointer md:first-letter py-0 md:mr-2'
+              className='uppercase font-semibold hover:text-blue'
             >
               {link.title}
             </Link>
           ))}
           {/* Admin Button */}
-          <div className='hidden lg:flex lg:gap-2'>
+          <div className='lg:gap-2'>
             {/* Admin interface */}
             {session.status === 'authenticated' && (
               <Link
@@ -84,7 +85,10 @@ const Navbar = () => {
 
       {/* Open Mobile Button */}
       <div className='flex grow items-center justify-end sm:hidden'>
-        <Popover.Button className='inline-flex items-center justify-center rounded-md bg-black p-2 text-gray hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink'>
+        <Popover.Button
+          className='inline-flex items-center justify-center rounded-md bg-black p-2 text-gray
+        focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink'
+        >
           <span className='sr-only'>Open menu</span>
           <Bars3BottomLeftIcon
             className='h-6 w-6'
@@ -121,7 +125,10 @@ const Navbar = () => {
                   </span>
                 </Link>
                 <div className='-mr-2'>
-                  <Popover.Button className='inline-flex items-center justify-center rounded-md bg-black p-2 text-gray hover:bg-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink'>
+                  <Popover.Button
+                    className='inline-flex items-center justify-center rounded-md bg-black p-2
+                  text-gray focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink'
+                  >
                     <span className='sr-only'>Close menu</span>
                     <XMarkIcon
                       className='h-6 w-6'
@@ -137,20 +144,21 @@ const Navbar = () => {
                     <Link
                       key={link.id}
                       href={link.url}
-                      className='uppercase font-semibold w-full hover:text-yellow me-2 cursor-pointer md:first-letter py-0 md:mr-6'
+                      className='uppercase font-semibold w-full hover:text-blue me-2 cursor-pointer md:first-letter py-0 md:mr-6'
                     >
                       {link.title}
                     </Link>
                   ))}
+                  <p>Hello</p>
                 </nav>
               </div>
               {/* Admin Button */}
-              <div className='lg:hidden sm:block'>
+              <div className='lg:hidden md:block'>
                 {/* Admin interface */}
                 {session.status === 'authenticated' && (
                   <Link
                     href={'/dashboard'}
-                    className='flex justify-center bg-pink rounded lg:p-4 py-0 lg:mr-4 sm:pb-4 mb-2 w-3/4 mx-auto'
+                    className='flex justify-center bg-pink rounded lg:p-4 py-0 lg:mr-4 md:pb-4 mb-2 w-3/4 mx-auto'
                   >
                     Dashboard
                   </Link>
