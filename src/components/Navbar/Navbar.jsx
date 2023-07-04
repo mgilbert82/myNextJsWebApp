@@ -84,9 +84,9 @@ const Navbar = () => {
       </div>
 
       {/* Open Mobile Button */}
-      <div className='flex grow items-center justify-end sm:hidden'>
+      <div className='flex items-center justify-evenly sm:hidden'>
         <Popover.Button
-          className='inline-flex items-center justify-center rounded-md bg-black p-2 text-gray
+          className='inline-flex items-center justify-center rounded-md bg-black text-gray
         focus:outline-none focus:ring-2 focus:ring-inset focus:ring-pink'
         >
           <span className='sr-only'>Open menu</span>
@@ -149,7 +149,6 @@ const Navbar = () => {
                       {link.title}
                     </Link>
                   ))}
-                  <p>Hello</p>
                 </nav>
               </div>
               {/* Admin Button */}

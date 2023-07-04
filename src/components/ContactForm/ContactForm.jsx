@@ -46,7 +46,7 @@ const ContactForm = () => {
     <>
       <form
         onSubmit={handleSubmit(onSubmitHandler)}
-        className='lg:w-2/4 text-center lg:mx-auto'
+        className='lg:w-2/4 text-center mx-auto'
       >
         <div className='grid lg:grid-rows mb-10'>
           {isSended && (
